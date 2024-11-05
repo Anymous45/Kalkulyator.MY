@@ -1,0 +1,131 @@
+/* Global styles for the body and calculator */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px; /* Max width for larger screens */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 32px;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+button {
+    padding: 25px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+    transform: translateY(-2px);
+}
+
+/* Operator buttons */
+button.operator {
+    background-color: #ff6347;
+}
+
+button.operator:hover {
+    background-color: #ff4500;
+}
+
+button.zero {
+    grid-column: span 2; /* The zero button spans two columns */
+}
+
+/* Focus styles for accessibility */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+/* Mobile phones (small devices) */
+@media (max-width: 480px) {
+    #display {
+        height: 50px;
+        font-size: 28px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+}
+
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+    #display {
+        height: 55px;
+        font-size: 30px;
+    }
+
+    button {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .buttons {
+        gap: 12px;
+    }
+}
+
+/* Larger screens (e.g., desktops) */
+@media (min-width: 769px) {
+    #display {
+        font-size: 32px;
+    }
+
+    button {
+        padding: 25px;
+        font-size: 24px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+}
